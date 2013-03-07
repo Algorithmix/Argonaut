@@ -19,11 +19,31 @@
             <Button Click="SettingsButtonClick"  Content="settings" />
             <Button Click="AlgorithmixButtonClick">
                 <StackPanel Orientation="Horizontal">
-                            <Image Source="{StaticResource argonaut_logo}" />
+                    <Image Source="{StaticResource argonaut_logo}" />
                     <TextBlock Text=" algorithmix deshredder" />
                 </StackPanel>
             </Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.WindowCommands>
-    <Grid/>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="67"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Content="Browse" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Margin="10,65,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="10,34,0,0"  Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Text="file..." VerticalAlignment="Top" Width="120"/>
+        <Controls:ToggleSwitch Header="Text Document" HorizontalAlignment="Left"  Grid.Column="0" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="56"/>
+        <ComboBox HorizontalAlignment="Left" Margin="10,71,0,0"  Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="26"/>
+        <Button Content="Reconstruct!" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120" Height="25"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" Text="HERE IS THE LOG, IT IS A FIXED WIDTH" VerticalAlignment="Top" RenderTransformOrigin="-0.16,1.125" Grid.ColumnSpan="2" Height="67" Width="517"/>
+        <WebBrowser Grid.Column="1" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Grid.RowSpan="3" Source="http://google.com/"/>
+    </Grid>
 </Controls:MetroWindow>
